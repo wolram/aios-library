@@ -10,6 +10,78 @@ default_dirs:
     - global: ~/.claude/commands/
 
 library:
-  skills: []
+  skills:
+    # Context skills — wolram/aios-context
+    - name: context-global
+      description: Marlow — voz, missão, ICP, valores, bio
+      source: https://github.com/wolram/aios-context/blob/main/global/about_me.md
+
+    - name: context-priorities
+      description: Roadmap 90d, 5 projetos top, metas numéricas
+      source: https://github.com/wolram/aios-context/blob/main/global/priorities.md
+
+    - name: context-icp
+      description: Perfil de cliente cross-projeto — demografía, dor, transformação
+      source: https://github.com/wolram/aios-context/blob/main/global/icp.md
+
+    - name: context-cltxpj
+      description: CLT×PJ — produto, ICP, ads, copy, KPIs
+      source: https://github.com/wolram/aios-context/blob/main/projects/cltxpj.md
+
+    - name: context-mss
+      description: MSS Consultoria — oferta, leads, entregáveis, retainer
+      source: https://github.com/wolram/aios-context/blob/main/projects/mss-consultoria.md
+
+    - name: context-pena
+      description: Pena — OAB, produto, aquisição, conversão
+      source: https://github.com/wolram/aios-context/blob/main/projects/pena.md
+
+    - name: context-construct-os
+      description: ConstructOS — stack Rust+React, ICP construtora, outbound, fases dev
+      source: https://github.com/wolram/aios-context/blob/main/projects/construct-os.md
+
+    - name: context-tinderpromos
+      description: TinderPromos + JobApp — afiliados, calendário, cross-projeto
+      source: https://github.com/wolram/aios-context/blob/main/projects/tinderpromos.md
+
+    # Capability skills — wolram/skills
+    - name: skill-content-post
+      description: Post IG/TikTok/X/Threads com voz Marlow + ângulo por projeto
+      source: https://github.com/wolram/skills/blob/main/skills/active/copywriting/SKILL.md
+
+    - name: skill-seo-article
+      description: Artigo SEO por persona · CLT×PJ, Pena, MSS
+      source: https://github.com/wolram/skills/blob/main/skills/active/web/SKILL.md
+
+    - name: skill-weekly-audit
+      description: 5 perguntas de auditoria · bottleneck · próximo passo por projeto
+      source: https://github.com/wolram/skills/blob/main/skills/active/strategy/SKILL.md
+
+    - name: skill-project-init
+      description: Spin up novo projeto com AIOS — herda contexto, instala skills base
+      source: https://github.com/wolram/skills/blob/main/skills/active/architecture/SKILL.md
+
+    # Automation catalog — wolram/aios-automations
+    - name: conn-n8n-content
+      description: 14 workflows n8n de conteúdo — TikTok, LinkedIn, YouTube, vídeo (Veo3, Kling)
+      source: https://github.com/wolram/aios-automations/blob/main/n8n/content/SKILL.md
+
+    - name: conn-n8n-business
+      description: 10 workflows n8n de processo — CI/CD, sprint, sales, finance, legal, support
+      source: https://github.com/wolram/aios-automations/blob/main/n8n/business/SKILL.md
+
+    - name: conn-uipath
+      description: RPA BR — CEP validator, address parsing via UiPath coded process
+      source: https://github.com/wolram/aios-automations/blob/main/uipath/cep-validator/SKILL.md
+
+    - name: skill-macos-automation
+      description: Scripts Python macOS — desktop cleanup, iCloud organizer, workspace status
+      source: https://github.com/wolram/aios-automations/blob/main/scripts/macos/SKILL.md
+
+    # Resource Manager — wolram/aios-resources
+    - name: resource-manager
+      description: Accounts, subscriptions, token budgets, auth health — leitura e atualização via agente
+      source: https://github.com/wolram/aios-resources/blob/main/SKILL.md
+
   agents: []
   prompts: []
