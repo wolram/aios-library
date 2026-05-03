@@ -94,6 +94,11 @@ library:
       description: Scripts Python macOS — desktop cleanup, iCloud organizer, workspace status
       source: https://github.com/wolram/aios-automations/blob/main/scripts/macos/SKILL.md
 
+    # Project repos — full codebases
+    - name: repo-mss-consultoria
+      description: MSS Consultoria — monorepo Next.js+Prisma+Tailwind, dashboard cliente, landing, GHL+n8n
+      source: https://github.com/wolram/04_MSS_Consultoria/blob/main/AGENTS.md
+
     # Resource Manager — wolram/aios-resources
     - name: resource-manager
       description: Accounts, subscriptions, token budgets, auth health — leitura e atualização via agente
