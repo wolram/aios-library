@@ -44,6 +44,22 @@ library:
       description: TinderPromos + JobApp — afiliados, calendário, cross-projeto
       source: https://github.com/wolram/aios-context/blob/main/projects/tinderpromos.md
 
+    - name: context-blueprint
+      description: Blueprint estratégico — holding, arquitetura GHL+n8n+AIOS, verticais, portfólio
+      source: https://github.com/wolram/aios-context/blob/main/global/blueprint.md
+
+    - name: context-agnostix
+      description: Agnostix.io — FinOps SaaS para IA, flagship global, SEO bilíngue
+      source: https://github.com/wolram/aios-context/blob/main/projects/agnostix.md
+
+    - name: context-habitsrats
+      description: HabitsRats — agência growth EN-first (Fase 1) → app iOS hábitos (Fase 2)
+      source: https://github.com/wolram/aios-context/blob/main/projects/habitsrats.md
+
+    - name: context-engseguranca
+      description: engseguranca.ia.br — NRs/NBRs IA, co-piloto engenheiro, IoT industrial
+      source: https://github.com/wolram/aios-context/blob/main/projects/engseguranca.md
+
     # Capability skills — wolram/skills
     - name: skill-content-post
       description: Post IG/TikTok/X/Threads com voz Marlow + ângulo por projeto
