@@ -1,12 +1,13 @@
 ---
 name: library
-description: Private skill distribution system. Use when the user wants to install, use, add, push, remove, sync, list, or search for skills, agents, or prompts from their private library catalog. Triggers on /library commands or mentions of library, skill distribution, or agentic management.
+description: Private skill distribution system for a create-first founder stack. Use when the user wants to install, use, add, push, remove, sync, list, or search for skills, agents, or prompts from their private library catalog. Triggers on /library commands or mentions of library, skill distribution, or agentic management.
 argument-hint: [command or prompt] [name or details]
 ---
 
 # The Library
 
-A meta-skill for private-first distribution of agentics (skills, agents, and prompts) across agents, devices, and teams.
+A meta-skill for private-first distribution of agentics (skills, agents, and prompts) through one catalog.
+Create first, register after, and treat review as optional unless the user asks for it.
 
 ## Variables
 

@@ -52,9 +52,9 @@ gh run list --limit 5
 # no Claude Code: "lista 10 perfis OAB no IG com 10k-100k para parceria"
 ```
 
-## 8. Auditoria semanal
+## 8. Próximo ship
 
 ```bash
-/library use skill-weekly-audit
-# → "auditoria Pena: cadastros, ativação (1 simulado), retenção D7, NPS"
+# no Claude Code:
+# "qual é a próxima entrega menor que aumenta ativação e retenção agora?"
 ```

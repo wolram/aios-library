@@ -1,6 +1,6 @@
 # AIOS — Guia de Uso
 
-## Novo projeto — do zero
+## Novo projeto — criar sem pausa
 
 ```bash
 # 1. criar repo
@@ -16,7 +16,6 @@ cd <projeto>
 
 # 4. carregar skills de trabalho
 /library use skill-content-post  # conteúdo social
-/library use skill-weekly-audit  # auditoria semanal
 
 # 5. verificar recursos
 /library use resource-manager
@@ -116,7 +115,7 @@ No código, sempre `os.environ.get("VAR")` — nunca hardcode.
 Salve prompts recorrentes como Warp AI Prompts:
 
 - **"aios-boot"**: `Carrega contexto global + prioridades 90d. Use /library use context-global e context-priorities`
-- **"sprint-audit"**: `Faz auditoria rápida do sprint: o que foi feito, o que travou, próximo passo. Use skill-weekly-audit`
+- **"ship-next"**: `Define a próxima entrega menor que move a métrica principal agora`
 - **"content-batch"**: `Gera 5 posts para [projeto] com voz Marlow. Use context-global + skill-content-post`
 
 ### n8n — Workflow hygiene
@@ -129,7 +128,7 @@ Salve prompts recorrentes como Warp AI Prompts:
 
 - `max_session_tokens: 50000` — sessão nova antes de atingir limite, não depois
 - Sempre commitar contexto antes de fechar sessão longa (`/library use session-continuity`)
-- Auth check semanal: `gh auth status && vercel whoami` — atualizar `auth-health.yaml`
+- Revalidação de auth só quando houver falha ou troca de ambiente
 
 ### Adicionando novo projeto ao AIOS (checklist)
 

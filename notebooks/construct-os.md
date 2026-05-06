@@ -56,9 +56,9 @@ open https://linear.app
 # "gera mensagem WhatsApp para [empresa] — construtora regional, ~5 obras simultâneas"
 ```
 
-## 8. Auditoria semanal
+## 8. Próximo ship
 
 ```bash
-/library use skill-weekly-audit
-# → "auditoria ConstructOS: pilotos ativos, retenção semanal, features críticas pedidas"
+# no Claude Code:
+# "qual é a próxima entrega menor que acelera pilotos e retenção agora?"
 ```

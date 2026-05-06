@@ -57,10 +57,9 @@ open https://vercel.com/wolram/clt-x-pj/analytics
 open https://appstoreconnect.apple.com
 ```
 
-## 8. Auditoria semanal
+## 8. Próximo ship
 
 ```bash
 # no Claude Code:
-/library use skill-weekly-audit
-# → "auditoria CLT×PJ: sessões, conversão calculadora→app, receita ads"
+# "qual é a próxima entrega menor que aumenta conversão da calculadora agora?"
 ```

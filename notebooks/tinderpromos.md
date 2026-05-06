@@ -57,9 +57,9 @@ gh issue list
 open https://jobapp.site
 ```
 
-## 8. Auditoria semanal
+## 8. Próximo ship
 
 ```bash
-/library use skill-weekly-audit
-# → "auditoria TinderPromos: seguidores, cliques afiliado, receita/mês, engajamento"
+# no Claude Code:
+# "qual é a próxima entrega menor que aumenta cliques e receita agora?"
 ```

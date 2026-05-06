@@ -54,9 +54,9 @@ open https://linear.app
 # "gera proposta para [empresa] — processo: [descrever] — escopo: 4 semanas"
 ```
 
-## 8. Auditoria semanal
+## 8. Próximo ship
 
 ```bash
-/library use skill-weekly-audit
-# → "auditoria MSS: leads contatados, reuniões, propostas, contratos fechados"
+# no Claude Code:
+# "qual é a próxima entrega menor que aumenta leads e propostas agora?"
 ```

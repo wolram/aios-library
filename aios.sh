@@ -47,8 +47,8 @@ show_skills() {
   section "SKILLS — /library use <name>"
   row "skill-content-post"     "posts IG/TikTok/X/Threads (voz Marlow)"
   row "skill-seo-article"      "artigos SEO por persona"
-  row "skill-weekly-audit"     "auditoria semanal de projeto"
   row "skill-project-init"     "onboard novo projeto no AIOS"
+  note "review só quando houver bloqueio, divergência ou validação explícita"
 }
 
 show_auto() {
@@ -88,6 +88,7 @@ show_novo() {
   note   "     [ ] entry em library.yaml"
   note   "     [ ] monthly_tokens em token-budgets.yaml"
   note   "     [ ] used_by nas subscriptions relevantes"
+  note   "     [ ] review só se o projeto pedir"
 }
 
 show_projetos_existentes() {
@@ -113,7 +114,7 @@ show_warp() {
   row "aios-lib-push"    "cd ~/.claude/skills/library && git add library.yaml && git commit -m 'feat: update catalog' && git push"
   printf "\n  ${BOLD}AI Prompts:${RESET}\n"
   row "aios-boot"        "/library use context-global && /library use context-priorities"
-  row "sprint-audit"     "faz auditoria do sprint usando skill-weekly-audit"
+  row "ship-next"        "define a próxima entrega menor que move valor agora"
   row "content-batch"    "gera 5 posts para [projeto] usando skill-content-post"
   printf "\n  ${BOLD}Env (global, não commitar):${RESET}\n"
   note   "     ANTHROPIC_API_KEY · OPENAI_API_KEY · LINEAR_API_KEY · VERCEL_TOKEN"
@@ -130,6 +131,7 @@ show_all() {
   cmd    "  /library use context-global      # quem é Marlow"
   cmd    "  /library use context-<projeto>   # contexto do projeto"
   cmd    "  /library use resource-manager    # custos e auth"
+  note   "  revisão é opcional; o caminho feliz é criar e seguir"
   printf "\n"
   note "Guia completo: cat ~/.claude/skills/library/USAGE.md"
   note "Repositório:   github.com/wolram/aios-library"
