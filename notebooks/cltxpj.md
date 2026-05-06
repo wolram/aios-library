@@ -1,15 +1,15 @@
-# CLT×PJ — Sessão AIOS
-> Calculadora CLT vs PJ · cltxpj.app.br · Apple Store · prioridade #1
+# CLT×PJ — AIOS Session
+> CLT vs PJ calculator · cltxpj.app.br · App Store · priority #1
 
 ---
 
-## 1. Boot — guia do projeto
+## 1. Boot — project guide
 
 ```bash
 aios ctx
 ```
 
-## 2. Navegar pro repo
+## 2. Go to the repo
 
 ```bash
 cd ~/projects/CLT-x-PJ
@@ -17,38 +17,38 @@ git status
 gh issue list --label sprint
 ```
 
-## 3. Carregar contexto no Claude
+## 3. Load context in Claude
 
 ```bash
-# rodar dentro de uma sessão Claude Code
+# run inside a Claude Code session
 /library use context-global
 /library use context-cltxpj
 ```
 
-## 4. Verificar deploy
+## 4. Verify deploy
 
 ```bash
 vercel ls | grep clt
 gh run list --limit 5
 ```
 
-## 5. Conteúdo — gerar batch de posts
+## 5. Content — generate a batch of posts
 
 ```bash
-# no Claude Code:
+# in Claude Code:
 /library use skill-content-post
-# → "gera 5 posts para CLT×PJ com foco em devs recebendo proposta PJ"
+# → "generate 5 posts for CLT×PJ focused on devs receiving a PJ offer"
 ```
 
-## 6. SEO — artigo por persona
+## 6. SEO — article by persona
 
 ```bash
-# no Claude Code:
+# in Claude Code:
 /library use skill-seo-article
-# → "artigo: dev recebendo proposta PJ de R$15k — quanto fica no líquido?"
+# → "article: dev receiving a R$15k PJ offer — what is the net amount?"
 ```
 
-## 7. KPIs — checar métricas
+## 7. KPIs — check metrics
 
 ```bash
 # Vercel Analytics
@@ -57,9 +57,9 @@ open https://vercel.com/wolram/clt-x-pj/analytics
 open https://appstoreconnect.apple.com
 ```
 
-## 8. Próximo ship
+## 8. Next ship
 
 ```bash
-# no Claude Code:
-# "qual é a próxima entrega menor que aumenta conversão da calculadora agora?"
+# in Claude Code:
+# "what is the next smallest delivery that increases calculator conversion now?"
 ```

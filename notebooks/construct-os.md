@@ -1,15 +1,15 @@
-# ConstructOS — Sessão AIOS
-> Gestão de obras B2B · Rust+Axum+React · construct-os-sigma.vercel.app · prioridade #4
+# ConstructOS — AIOS Session
+> B2B construction management · Rust+Axum+React · construct-os-sigma.vercel.app · priority #4
 
 ---
 
-## 1. Boot — guia do projeto
+## 1. Boot — project guide
 
 ```bash
 aios ctx
 ```
 
-## 2. Navegar pro repo
+## 2. Go to the repo
 
 ```bash
 cd ~/projects/construct-os
@@ -17,48 +17,48 @@ git status
 gh issue list --label sprint
 ```
 
-## 3. Carregar contexto no Claude
+## 3. Load context in Claude
 
 ```bash
 /library use context-global
 /library use context-construct-os
 ```
 
-## 4. Dev — rodar stack local
+## 4. Dev — run the local stack
 
 ```bash
-# backend Rust
+# Rust backend
 cd backend && cargo run
 
-# frontend React (nova aba)
+# React frontend (new tab)
 cd frontend && pnpm dev
 ```
 
-## 5. Verificar deploy frontend
+## 5. Verify frontend deploy
 
 ```bash
 vercel ls | grep construct
 open https://construct-os-sigma.vercel.app
 ```
 
-## 6. Pipeline de pilotos B2B
+## 6. B2B pilot pipeline
 
 ```bash
-# Linear: leads de construtoras
+# Linear: construction leads
 open https://linear.app
-# → filtrar por projeto ConstructOS, leads em abordagem
+# → filter by ConstructOS project, leads in outreach
 ```
 
-## 7. Outreach — abordar lead
+## 7. Outreach — contact the lead
 
 ```bash
-# no Claude Code após carregar contexto:
-# "gera mensagem WhatsApp para [empresa] — construtora regional, ~5 obras simultâneas"
+# in Claude Code after loading context:
+# "generate a WhatsApp message for [company] — regional builder, ~5 active sites"
 ```
 
-## 8. Próximo ship
+## 8. Next ship
 
 ```bash
-# no Claude Code:
-# "qual é a próxima entrega menor que acelera pilotos e retenção agora?"
+# in Claude Code:
+# "what is the next smallest delivery that accelerates pilots and retention now?"
 ```

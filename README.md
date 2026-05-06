@@ -1,58 +1,58 @@
-# AIOS — stack mínima do founder
+# AIOS — founder stack, minimal by design
 
-> Catálogo único para criar, registrar e reutilizar skills sem camada extra de review.
+> A single catalog to create, register, and reuse skills without an extra review layer.
 
 ---
 
-## Arquitetura
+## Architecture
 
 ```
-wolram/skills              ← skills, agents e scripts ativos (fonte da verdade)
-wolram/aios-context        ← contexto Marlow: global + projetos
-wolram/aios-library        ← catálogo central (/library)
+wolram/skills              ← active skills, agents, and scripts (source of truth)
+wolram/aios-context        ← Marlow context: global + projects
+wolram/aios-library        ← central catalog (/library)
 wolram/aios-resources      ← accounts, subscriptions, token budgets, auth health
-wolram/aios-automations    ← workflows n8n + scripts macOS + UiPath RPA
+wolram/aios-automations    ← n8n workflows + macOS scripts + UiPath RPA
 ```
 
-## Regra operacional
+## Operational rule
 
-- cria primeiro
-- registra depois
-- revisa só quando houver bloqueio, divergência ou validação explícita
+- create first
+- register after
+- review only when there is a blocker, a divergence, or explicit validation
 
-## Instalação (uma vez por máquina)
+## Installation (once per machine)
 
 ```bash
 git clone git@github.com:wolram/aios-library ~/.claude/skills/library
 ```
 
-## Uso
+## Usage
 
 ```bash
-# contexto global + prioridades
+# global context + priorities
 /library use context-global
 /library use context-priorities
 
-# contexto de projeto específico
+# specific project context
 /library use context-cltxpj
 /library use context-mss
 /library use context-pena
 /library use context-construct-os
 /library use context-tinderpromos
 
-# skills operacionais
-/library use skill-content-post      # posts IG/TikTok/X/Threads
-/library use skill-seo-article       # artigos SEO por persona
-/library use skill-project-init      # spin up novo projeto com AIOS
-/library use resource-manager        # custos, auth, token budgets
+# operational skills
+/library use skill-content-post      # IG/TikTok/X/Threads posts
+/library use skill-seo-article       # SEO articles by persona
+/library use skill-project-init      # spin up a new project with AIOS
+/library use resource-manager        # costs, auth, token budgets
 
-# revisão é opcional, não etapa padrão
-/library use skill-weekly-audit      # só quando houver necessidade explícita
+# review is optional, not a default step
+/library use skill-weekly-audit      # only when explicitly needed
 ```
 
-## Catálogo
+## Catalog
 
-| Entry | Tipo | Fonte |
+| Entry | Type | Source |
 |-------|------|-------|
 | `context-global` | context | aios-context/global/about_me.md |
 | `context-priorities` | context | aios-context/global/priorities.md |
@@ -72,29 +72,29 @@ git clone git@github.com:wolram/aios-library ~/.claude/skills/library
 | `skill-macos-automation` | automation | aios-automations/scripts/macos |
 | `resource-manager` | resource | aios-resources/SKILL.md |
 
-## Repos do ecossistema
+## Ecosystem repos
 
-| Repo | Visibilidade | Conteúdo |
+| Repo | Visibility | Content |
 |------|-------------|----------|
-| [aios-library](https://github.com/wolram/aios-library) | público (fork) | catálogo + `/library` skill |
-| [aios-context](https://github.com/wolram/aios-context) | privado | contexto global + projetos |
-| [aios-resources](https://github.com/wolram/aios-resources) | privado | YAMLs de custo, auth, tokens |
-| [aios-automations](https://github.com/wolram/aios-automations) | privado | n8n + scripts + UiPath |
-| [skills](https://github.com/wolram/skills) | privado | skills/agents ativos |
+| [aios-library](https://github.com/wolram/aios-library) | public fork | catalog + `/library` skill |
+| [aios-context](https://github.com/wolram/aios-context) | private | global context + projects |
+| [aios-resources](https://github.com/wolram/aios-resources) | private | cost, auth, and token YAMLs |
+| [aios-automations](https://github.com/wolram/aios-automations) | private | n8n + scripts + UiPath |
+| [skills](https://github.com/wolram/skills) | private | active skills and agents |
 
-## Guia de uso
+## Usage guide
 
-Ver [USAGE.md](USAGE.md) — novo projeto, projeto existente, boas práticas Warp.
+See [USAGE.md](USAGE.md) for new project flow, existing project flow, and Warp tips.
 
-## Stack & evolução
+## Stack & evolution
 
-| Fase | Stack | Status |
+| Phase | Stack | Status |
 |------|-------|--------|
 | A | Shell + YAML + Markdown | **ativo** |
 
-O stack não precisa de camada B/C para funcionar no dia a dia. O caminho feliz é
-`/library use`, `library.yaml` e os arquivos de contexto/skills já versionados.
+The stack does not need B/C layers to work day to day. The happy path is
+`/library use`, `library.yaml`, and the already versioned context/skill files.
 
 ---
 
-*Fork de [disler/the-library](https://github.com/disler/the-library) — adaptado para o ecossistema AIOS.*
+*Fork of [disler/the-library](https://github.com/disler/the-library) — adapted for the AIOS ecosystem.*

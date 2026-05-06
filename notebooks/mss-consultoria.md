@@ -1,15 +1,15 @@
-# MSS Consultoria — Sessão AIOS
-> Sprint 4 semanas · R$3k-15k · mssconsultoria.com.br · prioridade #2
+# MSS Consultoria — AIOS Session
+> 4-week sprint · R$3k-15k · mssconsultoria.com.br · priority #2
 
 ---
 
-## 1. Boot — guia do projeto
+## 1. Boot — project guide
 
 ```bash
 aios ctx
 ```
 
-## 2. Navegar pro repo
+## 2. Go to the repo
 
 ```bash
 cd ~/projects/mssconsultoria
@@ -17,46 +17,46 @@ git status
 gh issue list
 ```
 
-## 3. Carregar contexto no Claude
+## 3. Load context in Claude
 
 ```bash
 /library use context-global
 /library use context-mss
 ```
 
-## 4. Pipeline de leads — checar status
+## 4. Lead pipeline — check status
 
 ```bash
-# Linear: ver leads em progresso
+# Linear: see leads in progress
 open https://linear.app
-# → filtrar por projeto MSS Consultoria
+# → filter by MSS Consultoria project
 ```
 
-## 5. Automação cliente — iniciar sprint
+## 5. Client automation — start the sprint
 
 ```bash
-# no Claude Code:
+# in Claude Code:
 /library use conn-n8n-business
-# → workflow 5_Sales_Pipeline_Automation para novo lead
+# → workflow 5_Sales_Pipeline_Automation for a new lead
 ```
 
-## 6. Conteúdo — bastidores de automação
+## 6. Content — automation behind the scenes
 
 ```bash
 /library use skill-content-post
-# → "gera post mostrando bastidores de automação real para @mssconsultor.ia"
+# → "generate a post showing real automation behind the scenes for @mssconsultor.ia"
 ```
 
-## 7. Proposta — gerar documento
+## 7. Proposal — generate the document
 
 ```bash
-# no Claude Code após carregar contexto:
-# "gera proposta para [empresa] — processo: [descrever] — escopo: 4 semanas"
+# in Claude Code after loading context:
+# "generate a proposal for [company] — process: [describe] — scope: 4 weeks"
 ```
 
-## 8. Próximo ship
+## 8. Next ship
 
 ```bash
-# no Claude Code:
-# "qual é a próxima entrega menor que aumenta leads e propostas agora?"
+# in Claude Code:
+# "what is the next smallest delivery that increases leads and proposals now?"
 ```

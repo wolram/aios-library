@@ -1,15 +1,15 @@
-# Pena — Sessão AIOS
-> OAB com IA · pena.click · simulados adaptativos · prioridade #3
+# Pena — AIOS Session
+> AI for the Brazilian bar exam · pena.click · adaptive practice tests · priority #3
 
 ---
 
-## 1. Boot — guia do projeto
+## 1. Boot — project guide
 
 ```bash
 aios ctx
 ```
 
-## 2. Navegar pro repo
+## 2. Go to the repo
 
 ```bash
 cd ~/projects/penaclick
@@ -17,44 +17,44 @@ git status
 gh issue list --label sprint
 ```
 
-## 3. Carregar contexto no Claude
+## 3. Load context in Claude
 
 ```bash
 /library use context-global
 /library use context-pena
 ```
 
-## 4. Verificar deploy
+## 4. Verify deploy
 
 ```bash
 vercel ls | grep pena
 gh run list --limit 5
 ```
 
-## 5. Conteúdo — dicas OAB (IG/TikTok)
+## 5. Content — bar exam tips (IG/TikTok)
 
 ```bash
 /library use skill-content-post
-# → "gera 5 posts OAB: dicas rápidas, trechos de simulado, motivação pré-prova"
+# → "generate 5 bar exam posts: quick tips, practice snippets, pre-exam motivation"
 ```
 
-## 6. Conteúdo — Reels de revisão
+## 6. Content — review Reels
 
 ```bash
 /library use conn-n8n-content
 # → workflow 08-viral-instagram-reels ou 12-viral-shorts-machine
 ```
 
-## 7. Parcerias — lista de perfis OAB
+## 7. Partnerships — bar exam profile list
 
 ```bash
-# perfis alvo: 10k-100k seguidores, nicho OAB
-# no Claude Code: "lista 10 perfis OAB no IG com 10k-100k para parceria"
+# target profiles: 10k-100k followers, bar exam niche
+# in Claude Code: "list 10 bar exam IG profiles with 10k-100k followers for partnership"
 ```
 
-## 8. Próximo ship
+## 8. Next ship
 
 ```bash
-# no Claude Code:
-# "qual é a próxima entrega menor que aumenta ativação e retenção agora?"
+# in Claude Code:
+# "what is the next smallest delivery that increases activation and retention now?"
 ```

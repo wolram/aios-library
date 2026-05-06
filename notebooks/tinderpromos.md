@@ -1,15 +1,15 @@
-# TinderPromos + JobApp — Sessão AIOS
-> Afiliados · tinderdaspromos.com.br · jobapp.site · prioridade #5
+# TinderPromos + JobApp — AIOS Session
+> Affiliates · tinderdaspromos.com.br · jobapp.site · priority #5
 
 ---
 
-## 1. Boot — guia do projeto
+## 1. Boot — project guide
 
 ```bash
 aios ctx
 ```
 
-## 2. Navegar pros repos
+## 2. Go to the repos
 
 ```bash
 cd ~/projects/03_DealsEngine_SideProject
@@ -20,36 +20,36 @@ cd ~/projects/AppJob
 git status
 ```
 
-## 3. Carregar contexto no Claude
+## 3. Load context in Claude
 
 ```bash
 /library use context-global
 /library use context-tinderpromos
 ```
 
-## 4. Conteúdo — promoções do dia
+## 4. Content — daily promotions
 
 ```bash
 /library use conn-n8n-content
-# → workflow 11-tiktok-viral-agent ou 08-viral-instagram-reels
-# input: promoções do dia com link afiliado
+# → workflow 11-tiktok-viral-agent or 08-viral-instagram-reels
+# input: daily promotions with affiliate link
 ```
 
-## 5. Calendário — próximas datas
+## 5. Calendar — upcoming dates
 
 ```bash
-# no Claude Code após carregar contexto:
-# "próximas datas promocionais BR nos próximos 30 dias — gera calendário de posts"
+# in Claude Code after loading context:
+# "upcoming Brazilian promo dates in the next 30 days — generate a post calendar"
 ```
 
-## 6. Afiliados — checar performance
+## 6. Affiliates — check performance
 
 ```bash
-# acessar dashboard do programa de afiliados
+# open the affiliate program dashboard
 open https://tinderdaspromos.com.br/admin
 ```
 
-## 7. JobApp — landing e captura
+## 7. JobApp — landing and capture
 
 ```bash
 cd ~/projects/AppJob
@@ -57,9 +57,9 @@ gh issue list
 open https://jobapp.site
 ```
 
-## 8. Próximo ship
+## 8. Next ship
 
 ```bash
-# no Claude Code:
-# "qual é a próxima entrega menor que aumenta cliques e receita agora?"
+# in Claude Code:
+# "what is the next smallest delivery that increases clicks and revenue now?"
 ```

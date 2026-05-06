@@ -1,84 +1,84 @@
-# AIOS — Guia de Uso
+# AIOS — Usage Guide
 
-## Novo projeto — criar sem pausa
+## New project — create without pause
 
 ```bash
-# 1. criar repo
+# 1. create repo
 gh repo create wolram/<projeto> --private --clone
 cd <projeto>
 
-# 2. carregar contexto global
+# 2. load global context
 /library use context-global
 /library use context-priorities
 
-# 3. carregar contexto do projeto (se existir)
+# 3. load project context (if it exists)
 /library use context-cltxpj      # ou context-mss, context-pena, etc.
 
-# 4. carregar skills de trabalho
-/library use skill-content-post  # conteúdo social
+# 4. load working skills
+/library use skill-content-post  # social content
 
-# 5. verificar recursos
+# 5. check resources
 /library use resource-manager
-# → "qual o budget desse projeto?"
-# → "qual auth está expirando?"
+# → "what is this project's budget?"
+# → "which auth is expiring?"
 ```
 
-**Estrutura mínima de todo projeto novo:**
+**Minimum structure for every new project:**
 ```
 .claude/
-  CLAUDE.md       ← instrui o agente: contexto, stack, regras
-  settings.json   ← permissões, env vars, hooks
+  CLAUDE.md       ← instructs the agent: context, stack, rules
+  settings.json   ← permissions, env vars, hooks
 ```
 
-`CLAUDE.md` mínimo:
+`CLAUDE.md` minimum:
 ```markdown
 # <Projeto>
-Contexto: /library use context-<projeto>
-Stack: <linguagem/framework>
-Regra: respostas em PT-BR, sem filler
+Context: /library use context-<projeto>
+Stack: <language/framework>
+Rule: responses in English, no filler
 ```
 
 ---
 
-## Projeto existente — integrar AIOS
+## Existing project — integrate AIOS
 
 ```bash
-# Clonar library (uma vez por máquina)
+# Clone the library (once per machine)
 git clone git@github.com:wolram/aios-library ~/.claude/skills/library
 
-# Em qualquer sessão do projeto:
+# In any project session:
 /library use context-global
 /library use resource-manager
 
-# Adicionar CLAUDE.md se não existir
-/init   # gera CLAUDE.md a partir do estado atual do repo
+# Add CLAUDE.md if it does not exist
+/init   # generates CLAUDE.md from the repo's current state
 ```
 
-Para adicionar contexto de projeto novo ao AIOS:
+To add a new project context to AIOS:
 ```bash
-# Criar arquivo em aios-context
+# Create the file in aios-context
 cd /tmp/aios-context   # ou clonar wolram/aios-context
-echo "# Meu Projeto" > projects/meu-projeto.md
-# preencher: produto, ICP, canais, KPIs, oferta
-git add . && git commit -m "feat: add context meu-projeto" && git push
+echo "# My Project" > projects/my-project.md
+# fill in: product, ICP, channels, KPIs, offer
+git add . && git commit -m "feat: add context my-project" && git push
 
-# Registrar no catálogo
-# editar ~/.claude/skills/library/library.yaml — adicionar entry:
-# - name: context-meu-projeto
+# Register it in the catalog
+# edit ~/.claude/skills/library/library.yaml — add entry:
+# - name: context-my-project
 #   description: ...
-#   source: https://github.com/wolram/aios-context/blob/main/projects/meu-projeto.md
-git -C ~/.claude/skills/library add library.yaml && git -C ~/.claude/skills/library commit -m "feat: add context-meu-projeto to catalog" && git -C ~/.claude/skills/library push
+#   source: https://github.com/wolram/aios-context/blob/main/projects/my-project.md
+git -C ~/.claude/skills/library add library.yaml && git -C ~/.claude/skills/library commit -m "feat: add context-my-project to catalog" && git -C ~/.claude/skills/library push
 ```
 
 ---
 
-## Boas práticas
+## Best practices
 
 ### Warp — Workflows
 
-Salve os comandos AIOS mais usados como Workflows no Warp (`CMD+SHIFT+R`):
+Save the most common AIOS commands as Warp Workflows (`CMD+SHIFT+R`):
 
-| Nome | Comando |
+| Name | Command |
 |------|---------|
 | `aios-boot` | `cd ~/.claude/skills/library && git pull` |
 | `aios-auth-check` | `gh auth status && vercel whoami` |
@@ -87,7 +87,7 @@ Salve os comandos AIOS mais usados como Workflows no Warp (`CMD+SHIFT+R`):
 
 ### Warp — Notebooks
 
-Use Notebooks do Warp para sessões de trabalho por projeto — cada notebook vira runbook vivo:
+Use Warp Notebooks for project sessions. Each notebook becomes a living runbook:
 
 ```
 📓 cltxpj-sprint.md
@@ -99,7 +99,7 @@ Use Notebooks do Warp para sessões de trabalho por projeto — cada notebook vi
 
 ### Warp — Env
 
-Centralize vars sensíveis no Warp Env (não em `.env` commitado):
+Centralize sensitive vars in Warp Env, not in a committed `.env`:
 
 ```
 ANTHROPIC_API_KEY   → Warp Env: global
@@ -108,32 +108,32 @@ LINEAR_API_KEY      → Warp Env: global
 VERCEL_TOKEN        → Warp Env: global
 ```
 
-No código, sempre `os.environ.get("VAR")` — nunca hardcode.
+In code, always use `os.environ.get("VAR")` — never hardcode.
 
 ### Warp — Prompts (AI)
 
-Salve prompts recorrentes como Warp AI Prompts:
+Save recurring prompts as Warp AI Prompts:
 
-- **"aios-boot"**: `Carrega contexto global + prioridades 90d. Use /library use context-global e context-priorities`
-- **"ship-next"**: `Define a próxima entrega menor que move a métrica principal agora`
-- **"content-batch"**: `Gera 5 posts para [projeto] com voz Marlow. Use context-global + skill-content-post`
+- **"aios-boot"**: `Load global context + 90d priorities. Use /library use context-global and context-priorities`
+- **"ship-next"**: `Define the next smallest delivery that moves the main metric now`
+- **"content-batch"**: `Generate 5 posts for [project] in Marlow's voice. Use context-global + skill-content-post`
 
 ### n8n — Workflow hygiene
 
-- Cada workflow novo vai em `wolram/aios-automations` antes de ativar em produção
-- Nomear: `[número]-[categoria]-[o-que-faz].json` (ex: `15-content-linkedin-carousel.json`)
-- Depois de adicionar, atualizar `n8n/content/SKILL.md` com nova entrada na tabela
+- Put every new workflow in `wolram/aios-automations` before enabling it in production
+- Name it as `[number]-[category]-[what-it-does].json` (example: `15-content-linkedin-carousel.json`)
+- After adding it, update `n8n/content/SKILL.md` with a new table entry
 
 ### Session hygiene
 
-- `max_session_tokens: 50000` — sessão nova antes de atingir limite, não depois
-- Sempre commitar contexto antes de fechar sessão longa (`/library use session-continuity`)
-- Revalidação de auth só quando houver falha ou troca de ambiente
+- `max_session_tokens: 50000` — start a new session before hitting the limit, not after
+- Always commit context before closing a long session (`/library use session-continuity`)
+- Revalidate auth only when there is a failure or an environment change
 
-### Adicionando novo projeto ao AIOS (checklist)
+### Adding a new project to AIOS (checklist)
 
-- [ ] Criar `projects/<nome>.md` em `aios-context`
-- [ ] Adicionar entry em `library.yaml`
-- [ ] Adicionar `monthly_tokens` em `token-budgets.yaml`
-- [ ] Adicionar `used_by` nas subscriptions relevantes em `subscriptions.yaml`
-- [ ] Criar `CLAUDE.md` no repo do projeto
+- [ ] Create `projects/<name>.md` in `aios-context`
+- [ ] Add an entry to `library.yaml`
+- [ ] Add `monthly_tokens` to `token-budgets.yaml`
+- [ ] Add `used_by` in the relevant subscriptions in `subscriptions.yaml`
+- [ ] Create `CLAUDE.md` in the project repo
