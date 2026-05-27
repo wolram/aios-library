@@ -60,6 +60,32 @@ library:
       description: engseguranca.ia.br — NRs/NBRs IA, co-piloto engenheiro, IoT industrial
       source: https://github.com/wolram/aios-context/blob/main/projects/engseguranca.md
 
+    # Tutor contexts — wolram/aios-context/tutor
+    - name: tutor-research
+      type: tutor
+      description: Research tutor — ML/AI, RAG, fine-tuning, datasets, agentic systems
+      source: https://github.com/wolram/aios-context/blob/main/tutor/00-tutor-research.md
+
+    - name: tutor-swe
+      type: tutor
+      description: SWE tutor — Swift, Rust, TypeScript, Python, arquitetura, monorepos, CI/CD
+      source: https://github.com/wolram/aios-context/blob/main/tutor/01-tutor-swe.md
+
+    - name: tutor-personal
+      type: tutor
+      description: Personal context tutor — ally operacional, memória de contexto, sem terapia
+      source: https://github.com/wolram/aios-context/blob/main/tutor/02-tutor-personal.md
+
+    - name: tutor-projects
+      type: tutor
+      description: Projects tutor — estratégia, roadmap, monetização, portfólio de produtos
+      source: https://github.com/wolram/aios-context/blob/main/tutor/03-tutor-projects.md
+
+    - name: tutor-studies
+      type: tutor
+      description: Studies tutor — bibliography, PhD prep, reading lists, autodidact partner
+      source: https://github.com/wolram/aios-context/blob/main/tutor/04-tutor-studies.md
+
     # Capability skills — wolram/skills
     - name: skill-content-post
       description: Post IG/TikTok/X/Threads com voz Marlow + ângulo por projeto
