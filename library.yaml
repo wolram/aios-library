@@ -60,6 +60,10 @@ library:
       description: engseguranca.ia.br — NRs/NBRs IA, co-piloto engenheiro, IoT industrial
       source: https://github.com/wolram/aios-context/blob/main/projects/engseguranca.md
 
+    - name: context-pinforge
+      description: PinForge Studio — editor web React+R3F para PINNs/CAE, contrato v0, stack e ICP
+      source: https://github.com/wolram/aios-context/blob/main/projects/pinforge.md
+
     # Tutor contexts — wolram/aios-context/tutor
     - name: tutor-research
       type: tutor
